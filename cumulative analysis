@@ -1,0 +1,227 @@
+import pandas  as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+ds1 = { 'INSTITUTE NAMES':['IIT Madras', 'IIT Delhi',
+        'IIT Bombay', 'IIT Kanpur',
+        'IIT Roorkee', 'IIT Kharagpur',
+        'IIT Guwahati', 'IIT Hyderabad',
+        'NIT Tiruchirappalli', 'NIT Karnataka,Suratkhal',
+        'IIT Indore', 'IIT Varanasi',
+        'NIT Rourkela', 'NIT Warangal',
+        'NIT Calicut', 'NIT Silchar',
+        'NIT Durgapur', 'NIT Delhi',
+        'NIT Patna', 'NIT Kurukshetra',
+        'IIIT Allahabad'
+], 'old_ts':[89.787, 87.103, 80.729, 80.648, 73.762, 75.634, 69.702, 70.277,
+        70.313, 65.246, 63.733, 60.281, 63.938, 61.132, 62.799, 53.912,
+        51.412, 55.061, 49.885, 50.149, 43.298
+    ],
+        'old_rank':[1,2,3,4,5,6,9,8,7,10,12,15,11,14,13,17,18,16,20,19,21]
+}
+
+df1 = pd.DataFrame(ds1)
+
+labels = [f"{name} (Total score :{score})" for name, score in zip(ds1['INSTITUTE NAMES'],ds1['old_ts'])]
+label = [f"{name} (ranking:{rank})" for name, rank in zip(ds1['INSTITUTE NAMES'], ds1['old_rank'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+plt.figure(figsize=(10, 10))
+plt.pie(ds1['old_ts'], startangle=140, labels=labels, colors = colors)
+plt.legend(label, loc='center left', bbox_to_anchor=(1.3, 0, 1.23, 1), fontsize='small', title='Institutes with New Ranks')
+plt.title('Pie Chart of Institutes with Legends Based on old Rank')
+plt.show()
+
+ds2 = { 'INSTITUTE NAMES':['IIT Madras', 'IIT Delhi',
+        'IIT Bombay', 'IIT Kanpur',
+        'IIT Roorkee', 'IIT Kharagpur',
+        'IIT Guwahati', 'IIT Hyderabad',
+        'NIT Tiruchirappalli', 'NIT Karnataka,Suratkhal',
+        'IIT Indore', 'IIT Varanasi',
+        'NIT Rourkela', 'NIT Warangal',
+        'NIT Calicut', 'NIT Silchar',
+        'NIT Durgapur', 'NIT Delhi',
+        'NIT Patna', 'NIT Kurukshetra',
+        'IIIT Allahabad'
+], 'new_ts' : [
+    86.956, 85.334, 78.248, 77.694, 72.36, 72.322, 69.568, 67.378,
+    66.548, 63.49, 62.566, 58.898, 58.686, 58.006, 57.022, 50.876,
+    50.782, 49.992, 49.2, 45.738, 44.35
+],
+
+        'rank case1':[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+        }
+
+df2 = pd.DataFrame(ds2)
+
+labels = [f"{name} (Total score :{score})" for name, score in zip(ds2['INSTITUTE NAMES'],ds2['new_ts'])]
+label = [f"{name} (ranking:{rank})" for name, rank in zip(ds2['INSTITUTE NAMES'], ds2['rank case1'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+labels = [f"{name} (Total score :{score})" for name, score in zip(ds2['INSTITUTE NAMES'],ds2['new_ts'])]
+label = [f"{name} (ranking:{rank})" for name, rank in zip(ds2['INSTITUTE NAMES'], ds2['rank case1'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+plt.figure(figsize=(10, 10))
+plt.pie(ds2['new_ts'], startangle=140, labels=labels, colors = colors)
+plt.legend(label, loc='center left', bbox_to_anchor=(1.3, 0, 1.23, 1), fontsize='small', title='Institutes with New Ranks')
+plt.title('Pie Chart of Institutes with Legends Based on new Rank case 1')
+plt.show()
+
+ds3 = { 'INSTITUTE NAMES':['IIT Madras', 'IIT Delhi',
+        'IIT Bombay', 'IIT Kanpur',
+        'IIT Roorkee', 'IIT Kharagpur',
+        'IIT Guwahati', 'IIT Hyderabad',
+        'NIT Tiruchirappalli', 'NIT Karnataka,Suratkhal',
+        'IIT Indore', 'IIT Varanasi',
+        'NIT Rourkela', 'NIT Warangal',
+        'NIT Calicut', 'NIT Silchar',
+        'NIT Durgapur', 'NIT Delhi',
+        'NIT Patna', 'NIT Kurukshetra',
+        'IIIT Allahabad'
+], 'case2': [83.695, 83.15, 76.47, 78.08, 71.5725, 75.56, 69.965, 69.2125, 70.6625, 67.2675, 64.88, 65.3575, 67.175, 63.76, 66.565, 58.82, 58.5775, 59.64, 52.7075, 55.955, 49.475],
+        'rank case2':[1, 2, 4, 3, 6, 5, 8, 9, 7, 10, 14, 13, 11, 15, 12, 17, 18, 16, 20, 19, 21]
+
+
+}
+
+df3 = pd.DataFrame(ds3)
+
+labels = [f"{name} (Total Score:{score})" for name, score in zip(ds3['INSTITUTE NAMES'], ds3['case2'])]
+label = [f"{name} (Ranking:{rank})" for name, rank in zip(ds3['INSTITUTE NAMES'], ds3['rank case2'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+plt.figure(figsize=(10,10))
+plt.pie(ds3['case2'], labels = labels, colors = colors, startangle = 140)
+plt.legend(label, loc='center left',bbox_to_anchor=(1.3,0,1.23,1),fontsize='small',title='Institute with new rank' )
+plt.title('Pie chart of institutes based on new rank according to case 2')
+plt.show()
+
+ds4 = { 'INSTITUTE NAMES':['IIT Madras', 'IIT Delhi',
+        'IIT Bombay', 'IIT Kanpur',
+        'IIT Roorkee', 'IIT Kharagpur',
+        'IIT Guwahati', 'IIT Hyderabad',
+        'NIT Tiruchirappalli', 'NIT Karnataka,Suratkhal',
+        'IIT Indore', 'IIT Varanasi',
+        'NIT Rourkela', 'NIT Warangal',
+        'NIT Calicut', 'NIT Silchar',
+        'NIT Durgapur', 'NIT Delhi',
+        'NIT Patna', 'NIT Kurukshetra',
+        'IIIT Allahabad'
+], 'case3': [92.7935, 88.4715, 82.1295, 81.4515, 73.2735, 76.0445, 68.646, 71.3835, 70.829, 64.8455, 62.1515, 58.853, 66.164, 61.426, 65.317, 53.271, 50.2835, 56.3905, 48.98, 50.3895, 38.389
+
+
+],
+        'rank case3':[1, 2, 3, 4, 6, 5, 9, 7, 8, 12, 13, 15, 10, 14, 11, 17, 19, 16, 20, 18, 21]
+
+}
+
+labels = [f"{name} (Total Score:{score})" for name,score in zip(ds4['INSTITUTE NAMES'], ds4['case3'])]
+label = [f"{name} (Ranking: {rank})" for name, rank in zip(ds4['INSTITUTE NAMES'], ds4['rank case3'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+plt.figure(figsize=(10,10))
+plt.pie(ds4['case3'], labels = labels, colors = colors, startangle = 140)
+plt.legend(label, bbox_to_anchor=(1,0,0.7,1),fontsize='small', title ='institute with new rank')
+plt.title("Piechart of Institutes based on new rank according to case 3")
+plt.show()
+
+
+ds5 = { 'INSTITUTE NAMES':['IIT Madras', 'IIT Delhi',
+        'IIT Bombay', 'IIT Kanpur',
+        'IIT Roorkee', 'IIT Kharagpur',
+        'IIT Guwahati', 'IIT Hyderabad',
+        'NIT Tiruchirappalli', 'NIT Karnataka,Suratkhal',
+        'IIT Indore', 'IIT Varanasi',
+        'NIT Rourkela', 'NIT Warangal',
+        'NIT Calicut', 'NIT Silchar',
+        'NIT Durgapur', 'NIT Delhi',
+        'NIT Patna', 'NIT Kurukshetra',
+        'IIIT Allahabad'
+], 'case4': [90.958, 87.164, 80.706, 80.585, 72.3, 76.097, 68.54, 71.179, 71.072, 65.574, 62.294, 60.598, 67.904, 62.536, 67.327, 55.106, 52.924, 58.488, 49.928, 52.76, 39.878
+
+],
+        'rank case4':[1, 2, 3, 4, 6, 5, 9, 7, 8, 12, 14, 15, 10, 13, 11, 17, 18, 16, 20, 19, 21
+
+]}
+
+labels = [f"{name} (Total Score:{score})" for name,score in zip(ds5['INSTITUTE NAMES'], ds5['case4'])]
+label = [f"{name} (ranking: {rank})" for name, rank in zip (ds5['INSTITUTE NAMES'],ds5['rank case4'])]
+colors = [
+    '#FF0000', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4',
+    '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff',
+    '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1',
+    '#000075', '#808080', '#0000FF'
+]
+
+plt.figure(figsize=(10,10))
+plt.pie(ds5['case4'], labels= labels, colors = colors, startangle = 140)
+plt.legend(labels,bbox_to_anchor=(1,0,0.7,1),fontsize='small',title='Institute with new rank')
+plt.title("Piechart based on rank in case 4")
+plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+barWidth = 0.15
+fig, ax = plt.subplots(figsize=(12, 8))
+
+originalts = [89.787, 87.103, 80.729, 80.648, 73.762, 75.634, 69.702, 70.277, 70.313, 65.246, 63.733, 60.281, 63.938, 61.132, 62.799, 53.912, 51.412, 55.061, 49.885, 50.149, 43.298]
+tsincase1 = [86.956, 85.334, 78.248, 77.694, 72.36, 72.322, 69.568, 67.378, 66.548, 63.49, 62.566, 58.898, 58.686, 58.006, 57.022, 50.876, 50.782, 49.992, 49.2, 45.738, 44.35]
+tsincase2 = [83.695, 83.15, 76.47, 78.08, 71.5725, 75.56, 69.965, 69.2125, 70.6625, 67.2675, 64.88, 65.3575, 67.175, 63.76, 66.565, 58.82, 58.5775, 59.64, 52.7075, 55.955, 49.475]
+tsincase3 = [92.7935, 88.4715, 82.1295, 81.4515, 73.2735, 76.0445, 68.646, 71.3835, 70.829, 64.8455, 62.1515, 58.853, 66.164, 61.426, 65.317, 53.271, 50.2835, 56.3905, 48.98, 50.3895, 38.389]
+tsincase4 = [90.958, 87.164, 80.706, 80.585, 72.3, 76.097, 68.54, 71.179, 71.072, 65.574, 62.294, 60.598, 67.904, 62.536, 67.327, 55.106, 52.924, 58.488, 49.928, 52.76, 39.878
+]
+
+br1 = np.arange(len(originalts))
+br2 = [x + barWidth for x in br1]
+br3 = [x + barWidth for x in br2]
+br4 = [x + barWidth for x in br3]
+br5 = [x + barWidth for x in br4]
+
+ax.bar(br1, originalts, color='blue', width=barWidth, edgecolor='grey', label='Original total score')
+ax.bar(br2, tsincase1, color='red', width=barWidth, edgecolor='grey', label='Case 1 total score')
+ax.bar(br3, tsincase2, color='green', width=barWidth, edgecolor='grey', label='Case 2 total score')
+ax.bar(br4, tsincase3, color='yellow', width=barWidth, edgecolor='grey', label='Case 3 total score')
+ax.bar(br5, tsincase4, color='pink', width=barWidth, edgecolor='grey', label='Case 4 total score')
+
+ax.set_xlabel('Institute', fontweight='bold', fontsize=15)
+ax.set_ylabel('total Score', fontweight='bold', fontsize=15)
+ax.set_title('Institute total score Across Different Cases', fontweight='bold', fontsize=18)
+ax.set_xticks([r + 2 * barWidth for r in range(len(originalts))])
+ax.set_xticklabels(['IITM', 'IITD', 'IITB', 'IITK', 'IITR', 'IITKha', 'IITG', 'IITH',
+                    'NITT', 'NITKS', 'IITI', 'IITBHU', 'NITR', 'NITW', 'NITC', 'NITSil',
+                    'NITDurg', 'NITD', 'NITP', 'NITK', 'IIITA'], rotation=45, ha='right')
+
+ax.legend()
+ax.grid(True, linestyle='--', alpha=0.7)
+
+plt.tight_layout()
+plt.show()
+
