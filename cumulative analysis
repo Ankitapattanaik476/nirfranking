@@ -295,6 +295,7 @@ plt.show()
 
 
 import numpy as np
+
 # Transition matrix
 P = np.array([
     [0, 0, 0, 0, 0],  # S1
@@ -354,10 +355,11 @@ def predict_ranks(initial_state, transition_matrix, ranks, years_to_predict):
 years_to_predict = 5
 predicted_ranks = predict_ranks(initial_state, P, ranks, years_to_predict)
 
-# Printing the results
+# Printing the results with institute name
 start_year = 2024
+institute_name = "NIT ROURKELA"
 for i, rank in enumerate(predicted_ranks):
-    print(f"{start_year + i}: Rank {rank}")
+    print(f"{start_year + i}: {institute_name} - Rank {rank}")
 
 ds11 = { 'INSTITUTE NAMES':['IIS', 'JNU',
         'JMI', 'JU',
